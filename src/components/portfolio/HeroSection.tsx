@@ -14,6 +14,19 @@ const HeroSection = () => {
         <div className="absolute top-40 right-32 w-1 h-1 bg-primary rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-gold rounded-full animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-20 right-20 w-1 h-1 bg-primary rounded-full animate-float opacity-30" style={{ animationDelay: '0.5s' }}></div>
+        
+        {/* Additional mystical particles */}
+        <div className="absolute top-1/3 left-10 w-1.5 h-1.5 bg-crimson rounded-full animate-drift opacity-45" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-60 right-1/4 w-1 h-1 bg-amber rounded-full animate-spiral opacity-35" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-1/3 right-10 w-2 h-2 bg-bronze rounded-full animate-float opacity-55" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-80 left-1/2 w-1 h-1 bg-crimson rounded-full animate-drift opacity-40" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-amber rounded-full animate-spiral opacity-30" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-1/2 right-40 w-1 h-1 bg-bronze rounded-full animate-float opacity-50" style={{ animationDelay: '3.2s' }}></div>
+        
+        {/* Twinkling stars */}
+        <div className="absolute top-24 right-1/3 w-0.5 h-0.5 bg-gold rounded-full animate-twinkle opacity-70" style={{ animationDelay: '2.8s' }}></div>
+        <div className="absolute bottom-24 left-40 w-0.5 h-0.5 bg-amber rounded-full animate-twinkle opacity-60" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute top-1/4 left-1/2 w-0.5 h-0.5 bg-crimson rounded-full animate-twinkle opacity-50" style={{ animationDelay: '4.5s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 text-center animate-fade-in">
@@ -43,7 +56,7 @@ const HeroSection = () => {
               size="lg" 
               className="font-garamond text-lg px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-xl transition-all duration-300"
             >
-              Begin Exploration
+              Begin Exploring
             </Button>
           </div>
         </div>

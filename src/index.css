@@ -45,6 +45,9 @@ All colors MUST be HSL.
     --gold: 51 83% 53%;
     --indigo: 225 73% 20%;
     --gold-glow: 51 83% 63%;
+    --crimson: 0 65% 25%;
+    --amber: 45 90% 60%;
+    --bronze: 30 45% 35%;
     
     /* Gradients */
     --gradient-mystical: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-glow)) 100%);
@@ -100,6 +103,9 @@ All colors MUST be HSL.
     --gold: 51 83% 63%;
     --indigo: 225 73% 25%;
     --gold-glow: 51 83% 73%;
+    --crimson: 0 65% 35%;
+    --amber: 45 90% 65%;
+    --bronze: 30 45% 40%;
     
     /* Dark gradients */
     --gradient-mystical: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-glow)) 100%);
