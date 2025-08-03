@@ -69,16 +69,16 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-parchment">
+    <section id="projects" className="py-20 bg-gradient-to-b from-burgundy/10 to-crimson/10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <ScrollText className="w-12 h-12 text-primary animate-glow" />
+            <ScrollText className="w-12 h-12 text-gold animate-glow" />
           </div>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">
             The Scroll Chamber
           </h2>
-          <p className="font-garamond text-xl text-muted-foreground italic">
+          <p className="font-garamond text-xl text-leather italic">
             Preserved chronicles of strategic endeavors
           </p>
         </div>

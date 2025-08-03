@@ -73,25 +73,41 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Space for image */}
+        {/* Circular portrait space */}
         <div className="flex-1 max-w-md ml-12 hidden lg:block">
           <div className="relative">
-            {/* Placeholder for portrait image */}
-            <div className="aspect-[3/4] bg-gradient-to-b from-parchment/20 to-mahogany/20 rounded-lg border-4 border-gold/30 shadow-deep flex items-center justify-center backdrop-blur-sm animate-fade-in">
-              <div className="text-center text-leather/60">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-mystical/20 flex items-center justify-center">
-                  <ScrollText className="w-12 h-12 text-gold/60" />
-                </div>
-                <p className="font-garamond italic">Portrait Space</p>
-                <p className="text-sm mt-1">Add your image here</p>
+            {/* Circular grid pattern background */}
+            <div className="w-80 h-80 mx-auto relative">
+              {/* Grid circles */}
+              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-2 opacity-30">
+                {Array.from({ length: 64 }).map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`rounded-full ${
+                      Math.random() > 0.7 ? 'bg-gold/40' : 
+                      Math.random() > 0.5 ? 'bg-amber/30' : 'bg-bronze/20'
+                    } animate-twinkle`}
+                    style={{ animationDelay: `${Math.random() * 3}s` }}
+                  />
+                ))}
               </div>
+              
+              {/* Main circular portrait area */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-parchment/40 via-gold/20 to-mahogany/30 border-4 border-gold/50 shadow-deep flex items-center justify-center backdrop-blur-sm animate-fade-in overflow-hidden">
+                <div className="text-center text-leather/60">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-mystical/30 flex items-center justify-center">
+                    <ScrollText className="w-8 h-8 text-gold/80" />
+                  </div>
+                  <p className="font-garamond italic text-sm">Your Portrait</p>
+                  <p className="text-xs mt-1 opacity-80">Drag & drop here</p>
+                </div>
+              </div>
+              
+              {/* Decorative orbital rings */}
+              <div className="absolute inset-0 rounded-full border border-gold/20 animate-[spin_20s_linear_infinite]"></div>
+              <div className="absolute inset-2 rounded-full border border-amber/20 animate-[spin_25s_linear_infinite_reverse]"></div>
+              <div className="absolute inset-6 rounded-full border border-bronze/20 animate-[spin_30s_linear_infinite]"></div>
             </div>
-            
-            {/* Decorative frame elements */}
-            <div className="absolute -top-3 -left-3 w-6 h-6 border-t-4 border-l-4 border-gold/60 rounded-tl-lg"></div>
-            <div className="absolute -top-3 -right-3 w-6 h-6 border-t-4 border-r-4 border-gold/60 rounded-tr-lg"></div>
-            <div className="absolute -bottom-3 -left-3 w-6 h-6 border-b-4 border-l-4 border-gold/60 rounded-bl-lg"></div>
-            <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b-4 border-r-4 border-gold/60 rounded-br-lg"></div>
           </div>
         </div>
       </div>

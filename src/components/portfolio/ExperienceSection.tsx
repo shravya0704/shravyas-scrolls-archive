@@ -1,6 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Scroll, Brain, Star, Zap, Code, Users } from "lucide-react";
+import { Scroll, Star, Zap, Code, Users } from "lucide-react";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -50,76 +48,58 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-background">
+    <section id="experience" className="py-20 bg-gradient-to-b from-crimson/10 to-maroon/10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <Scroll className="w-12 h-12 text-primary" />
+            <Scroll className="w-12 h-12 text-gold animate-glow" />
           </div>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">
             Guild Records
           </h2>
-          <p className="font-garamond text-xl text-muted-foreground italic">
+          <p className="font-garamond text-xl text-leather italic">
             Chronicles of professional endeavors and mastered arts
           </p>
         </div>
 
         {/* Experience */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="font-cinzel text-2xl font-semibold text-foreground mb-8 text-center">
+          <h3 className="font-cinzel text-2xl font-semibold text-mahogany mb-8 text-center">
             Professional Chronicles
           </h3>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <Card key={index} className="shadow-scroll hover:shadow-glow transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="font-cinzel text-xl text-card-foreground">
-                    {exp.title}
-                  </CardTitle>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                    <span className="font-garamond text-lg text-primary">{exp.company}</span>
-                    <span className="font-garamond text-muted-foreground italic">{exp.timeline}</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {exp.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="font-lora text-card-foreground flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div key={index} className="bg-gradient-scroll rounded-lg p-6 shadow-deep border border-leather/20 hover:shadow-glow transition-all duration-300">
+                <h3 className="font-cinzel text-xl font-bold text-crimson mb-2">{exp.title}</h3>
+                <p className="font-garamond text-gold font-semibold mb-2">{exp.company} • {exp.timeline}</p>
+                <ul className="space-y-2">
+                  {exp.details.map((detail, detailIndex) => (
+                    <li key={detailIndex} className="font-garamond text-leather flex items-start gap-2">
+                      <span className="text-amber mt-2 flex-shrink-0">•</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Skills */}
-        <div className="max-w-6xl mx-auto">
-          <h3 className="font-cinzel text-2xl font-semibold text-foreground mb-8 text-center">
+        <div className="max-w-4xl mx-auto bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20 mt-12">
+          <h3 className="font-cinzel text-2xl font-bold text-crimson mb-6 text-center flex items-center justify-center gap-2">
+            <Star className="w-6 h-6 text-gold" />
             Mastered Arts & Spells
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="shadow-scroll hover:shadow-glow transition-all duration-300">
-                <CardHeader className="pb-3">
-                  <CardTitle className="font-cinzel text-lg flex items-center gap-2 text-card-foreground">
-                    <span className="text-primary">{category.icon}</span>
-                    {category.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="outline" className="font-garamond text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg p-4 border border-caramel/20">
+                <h4 className="font-cinzel font-bold text-gold mb-2 flex items-center gap-2">
+                  <span className="text-amber">{category.icon}</span>
+                  {category.category}
+                </h4>
+                <p className="font-garamond text-leather text-sm">{category.skills.join(", ")}</p>
+              </div>
             ))}
           </div>
         </div>
