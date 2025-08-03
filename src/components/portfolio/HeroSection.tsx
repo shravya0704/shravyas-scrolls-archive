@@ -27,7 +27,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="font-cinzel text-5xl md:text-7xl font-bold mb-6 text-foreground">
-            Welcome to the Archive of
+            HI, I AM
             <span className="block text-primary bg-gradient-mystical bg-clip-text text-transparent mt-2">
               Shravya Azmani
             </span>
