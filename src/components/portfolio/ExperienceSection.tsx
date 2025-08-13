@@ -59,7 +59,7 @@ const ExperienceSection = () => {
         <div className="max-w-4xl mx-auto bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20 mt-12">
           <h3 className="font-cinzel text-2xl font-bold text-crimson mb-6 text-center flex items-center justify-center gap-2">
             <Star className="w-6 h-6 text-gold" />
-            Mastered Arts & Spells
+            Skills
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {skillCategories.map((category, index) => <div key={index} className="bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg p-4 border border-caramel/20">
