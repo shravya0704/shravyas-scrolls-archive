@@ -28,7 +28,7 @@ const ExperienceSection = () => {
     icon: <Users className="w-5 h-5" />,
     skills: ["Business Communication", "Content Writing", "Presentation Design", "Case Solving", "Stakeholder Mapping"]
   }];
-  return <section id="experience" className="py-20 bg-gradient-to-b from-crimson/10 to-maroon/10">
+  return <section id="experience" className="py-20 bg-gradient-to-b from-crimson/10 to-maroon/10 scroll-mt-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">

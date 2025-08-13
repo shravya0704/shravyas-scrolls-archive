@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     icon: <Shirt className="w-6 h-6" />,
     timeline: "Submitted for Entrepreneurship Evaluation"
   }];
-  return <section id="projects" className="py-20 bg-gradient-to-b from-burgundy/10 to-crimson/10">
+  return <section id="projects" className="py-20 bg-gradient-to-b from-burgundy/10 to-crimson/10 scroll-mt-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">

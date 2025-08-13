@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, GraduationCap, Star } from "lucide-react";
 const AboutSection = () => {
-  return <section id="about" className="py-20 bg-gradient-to-b from-mahogany/10 to-burgundy/10">
+  return <section id="about" className="py-20 bg-gradient-to-b from-mahogany/10 to-burgundy/10 scroll-mt-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">

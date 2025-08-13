@@ -3,10 +3,14 @@ import AboutSection from "@/components/portfolio/AboutSection";
 import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ContactSection from "@/components/portfolio/ContactSection";
+import Navigation from "@/components/Navigation";
+import FloatingParticles from "@/components/FloatingParticles";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <Navigation />
+      <FloatingParticles />
       <HeroSection />
       <AboutSection />
       <ProjectsSection />

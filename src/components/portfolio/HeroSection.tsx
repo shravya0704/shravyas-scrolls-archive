@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library animate-fade-in">
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-2 h-2 bg-gold rounded-full animate-float opacity-60"></div>
