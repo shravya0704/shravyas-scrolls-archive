@@ -9,7 +9,8 @@ const AboutSection = () => {
           </div>
           <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">CHAPTER 1</h2>
           <p className="font-garamond text-leather italic text-2xl">
-        </p>
+            Introduction
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">

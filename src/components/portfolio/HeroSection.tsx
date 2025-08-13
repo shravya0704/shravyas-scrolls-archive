@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ScrollText, Sparkles } from "lucide-react";
+import shravyaPortrait from "@/assets/shravya-portrait.jpg";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -94,13 +95,11 @@ const HeroSection = () => {
               
               {/* Main circular portrait area */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-parchment/40 via-gold/20 to-mahogany/30 border-4 border-gold/50 shadow-deep flex items-center justify-center backdrop-blur-sm animate-fade-in overflow-hidden">
-                <div className="text-center text-leather/60">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-mystical/30 flex items-center justify-center">
-                    <ScrollText className="w-8 h-8 text-gold/80" />
-                  </div>
-                  <p className="font-garamond italic text-sm">Your Portrait</p>
-                  <p className="text-xs mt-1 opacity-80">Drag & drop here</p>
-                </div>
+                <img 
+                  src={shravyaPortrait} 
+                  alt="Shravya Azmani Portrait" 
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               
               {/* Decorative orbital rings */}
