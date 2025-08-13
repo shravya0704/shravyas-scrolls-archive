@@ -8,7 +8,7 @@ const ContactSection = () => {
             <Send className="w-12 h-12 text-gold animate-glow" />
           </div>
           <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">
-            Message via Raven
+            Contact Me
           </h2>
           <p className="font-garamond text-xl text-leather italic">Let's start a conversation and build something.</p>
         </div>
