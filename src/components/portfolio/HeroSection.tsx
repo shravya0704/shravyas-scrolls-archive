@@ -98,7 +98,10 @@ const HeroSection = () => {
                 <img 
                   src={shravyaPortrait} 
                   alt="Shravya Azmani Portrait" 
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover rounded-full filter sepia-[20%] contrast-[110%] brightness-[95%] saturate-[85%] hue-rotate-[10deg]"
+                  style={{
+                    filter: "sepia(15%) contrast(110%) brightness(95%) saturate(85%) hue-rotate(8deg)"
+                  }}
                 />
               </div>
               

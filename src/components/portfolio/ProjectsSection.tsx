@@ -7,14 +7,14 @@ const ProjectsSection = () => {
     details: ["Benchmarked growth strategies of major beauty brands", "Proposed localized sub-brand strategy targeting Tier 2/3 cities", "Suggested omnichannel GTM strategy blending experiential retail and digital-first expansion", "Frameworks Used: 4Ps, STP, Competitor Mapping"],
     technologies: ["Market Research", "Strategy", "4Ps Framework", "STP Analysis"],
     icon: <Sparkles className="w-6 h-6" />,
-    timeline: "Competition: Indian Case Challenge, IIT Kharagpur"
+    timeline: "Competition: Case Challenge"
   }, {
     title: "🌿 PISTARA – Clean Beauty GTM Strategy",
     description: "Built a complete go-to-market strategy for a clean beauty startup selling pistachio-based hydration mist.",
     details: ["Proposed hybrid D2C + B2B revenue model", "Designed refill stations and vending machine placements strategy", "Created byproduct monetization plan", "Developed launch roadmap with pricing (₹499–599) and Gen Z targeting"],
     technologies: ["GTM Strategy", "D2C", "B2B", "Sustainability"],
     icon: <Leaf className="w-6 h-6" />,
-    timeline: "Jan 2025 – Apr 2025 | ConsultXpert, SRCC Delhi"
+    timeline: "Jan 2025 – Apr 2025 | ConsultXpert"
   }, {
     title: "💸 MoneyVerse – Gamified Finance Education Platform",
     description: "Created an interactive learning platform using MERN stack for Gen Z financial education.",

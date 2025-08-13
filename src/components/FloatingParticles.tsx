@@ -15,14 +15,14 @@ const FloatingParticles = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    // Create initial particles
-    const initialParticles: Particle[] = Array.from({ length: 20 }, (_, i) => ({
+    // Create initial particles - reduced from 20 to 8
+    const initialParticles: Particle[] = Array.from({ length: 8 }, (_, i) => ({
       id: i,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.6 + 0.2,
-      speed: Math.random() * 0.5 + 0.2,
+      size: Math.random() * 2 + 0.5, // Smaller particles
+      opacity: Math.random() * 0.3 + 0.1, // More subtle opacity
+      speed: Math.random() * 0.3 + 0.1, // Slower movement
       color: Math.random() > 0.7 ? "gold" : Math.random() > 0.4 ? "amber" : "bronze"
     }));
     
@@ -53,11 +53,11 @@ const FloatingParticles = () => {
     };
   }, []);
 
-  // Increase particle intensity on scroll
-  const particleIntensity = Math.min(1 + scrollY / 2000, 2);
+  // Subtle increase in particle intensity on scroll
+  const particleIntensity = Math.min(1 + scrollY / 5000, 1.3);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {particles.map((particle) => (
         <div
           key={particle.id}
@@ -67,10 +67,10 @@ const FloatingParticles = () => {
             top: `${particle.y}px`,
             width: `${particle.size * particleIntensity}px`,
             height: `${particle.size * particleIntensity}px`,
-            opacity: particle.opacity * particleIntensity,
-            animationDelay: `${particle.id * 0.2}s`,
-            filter: "blur(0.5px)",
-            boxShadow: `0 0 ${particle.size * 2}px currentColor`
+            opacity: particle.opacity * particleIntensity * 0.6, // More subtle
+            animationDelay: `${particle.id * 0.3}s`, // Slower stagger
+            filter: "blur(1px)", // More blur for softer look
+            boxShadow: `0 0 ${particle.size}px currentColor`
           }}
         />
       ))}

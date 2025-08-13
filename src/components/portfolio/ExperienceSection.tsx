@@ -7,7 +7,7 @@ const ExperienceSection = () => {
     details: ["Wrote and structured pitch decks for client presentations, investor outreach, and government grant applications", "Conducted competitive benchmarking across 8+ AI startups; built positioning matrices to define whitespace opportunities", "Supported GTM strategies for new AI products by conducting trend research and user persona mapping"]
   }, {
     title: "🔹 Machine Learning Intern",
-    company: "Claidroid Technologies, Mumbai",
+    company: "Claidroid Technologies",
     timeline: "Dec 2024 – Jan 2025",
     details: ["Developed a deep learning image classifier using MobileNetV2 via transfer learning on the CIFAR-100 dataset", "Achieved 75% validation accuracy on over 100 image categories", "Tech Stack: Python, TensorFlow, Keras"]
   }];

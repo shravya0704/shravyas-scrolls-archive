@@ -47,7 +47,7 @@ const Navigation = () => {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
       isScrolled 
         ? "bg-mahogany/95 backdrop-blur-lg border-b border-gold/20 shadow-deep" 
         : "bg-transparent"
@@ -59,8 +59,8 @@ const Navigation = () => {
             className="flex items-center gap-2 cursor-pointer group"
             onClick={() => scrollToSection("hero")}
           >
-            <Scroll className="w-6 h-6 text-gold group-hover:rotate-12 transition-transform duration-300" />
-            <span className="font-cinzel font-bold text-gold group-hover:text-amber transition-colors">
+            <Scroll className="w-6 h-6 text-gold group-hover:rotate-6 transition-transform duration-200" />
+            <span className="font-cinzel font-bold text-gold group-hover:text-amber transition-colors duration-200">
               Shravya
             </span>
           </div>
@@ -72,7 +72,7 @@ const Navigation = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={cn(
-                  "font-garamond font-medium transition-all duration-300 relative group",
+                  "font-garamond font-medium transition-all duration-200 relative group",
                   "hover:text-gold hover:scale-105",
                   activeSection === item.id
                     ? "text-gold"
@@ -85,13 +85,13 @@ const Navigation = () => {
                 
                 {/* Animated underline */}
                 <span className={cn(
-                  "absolute bottom-0 left-0 h-0.5 bg-gradient-mystical transition-all duration-300",
+                  "absolute bottom-0 left-0 h-0.5 bg-gradient-mystical transition-all duration-200",
                   "group-hover:w-full",
                   activeSection === item.id ? "w-full" : "w-0"
                 )} />
                 
                 {/* Glow effect on hover */}
-                <span className="absolute inset-0 rounded opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gold/20 blur-sm" />
+                <span className="absolute inset-0 rounded opacity-0 group-hover:opacity-20 transition-opacity duration-200 bg-gold/20 blur-sm" />
               </button>
             ))}
           </div>
