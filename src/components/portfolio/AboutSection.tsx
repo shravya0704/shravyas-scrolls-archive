@@ -14,10 +14,7 @@ const AboutSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20 mb-8 hover:shadow-glow transition-all duration-300">
-            <h3 className="font-cinzel text-2xl font-bold text-crimson mb-4 flex items-center gap-2">
-              <Star className="w-6 h-6 text-gold" />
-              Chapter I: Origins
-            </h3>
+            
             <p className="font-garamond text-lg text-leather leading-relaxed mb-6">In a world of noise, I find meaning in structure. Whether it's decoding product-market fit or crafting a pitch for an early-stage idea, I enjoy bringing strategy, research, technology and storytelling together. My journey spans across AI, product, and consulting, where I've learned to transform complex problems into clear, actionable narratives.</p>
           </div>
 
