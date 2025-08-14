@@ -75,7 +75,7 @@ const ContactSection = () => {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:shravyaazmani@gmail.com" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shravyawork07@gmail.com" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-mahogany" />
                 </div>
@@ -85,7 +85,7 @@ const ContactSection = () => {
                 </div>
               </a>
 
-              <a href="www.linkedin.com/in/shravya-azmani-357738281" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
+              <a href="https://www.linkedin.com/in/shravya-azmani-357738281" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Linkedin className="w-6 h-6 text-mahogany" />
                 </div>
