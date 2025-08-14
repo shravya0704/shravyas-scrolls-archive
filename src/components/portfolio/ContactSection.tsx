@@ -73,28 +73,39 @@ const ContactSection = () => {
               <Scroll className="w-8 h-8 text-gold" />
               <h3 className="font-cinzel text-2xl font-bold text-crimson">Let's Connect</h3>
             </div>
+<div className="space-y-4">
+  {/* Email link - opens Gmail compose in a new tab */}
+  <a 
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=shravyawork07@gmail.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group"
+  >
+    <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
+      <Mail className="w-6 h-6 text-mahogany" />
+    </div>
+    <div>
+      <h4 className="font-cinzel text-lg font-bold text-crimson">Email</h4>
+      <p className="font-garamond text-leather">shravyawork07@gmail.com</p>
+    </div>
+  </a>
 
-            <div className="space-y-4">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shravyawork07@gmail.com" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail className="w-6 h-6 text-mahogany" />
-                </div>
-                <div>
-                  <h4 className="font-cinzel text-lg font-bold text-crimson">Email</h4>
-                  <p className="font-garamond text-leather">shravyawork07@gmail.com</p>
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/in/shravya-azmani-357738281" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Linkedin className="w-6 h-6 text-mahogany" />
-                </div>
-                <div>
-                  <h4 className="font-cinzel text-lg font-bold text-crimson">LinkedIn</h4>
-                  <p className="font-garamond text-leather">Connect with me</p>
-                </div>
-              </a>
-            </div>
+  {/* LinkedIn link - opens in new tab */}
+  <a 
+    href="https://www.linkedin.com/in/shravya-azmani-357738281/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group"
+  >
+    <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
+      <Linkedin className="w-6 h-6 text-mahogany" />
+    </div>
+    <div>
+      <h4 className="font-cinzel text-lg font-bold text-crimson">LinkedIn</h4>
+      <p className="font-garamond text-leather">Connect with me</p>
+    </div>
+  </a>
+</div>
 
             <div className="text-center pt-6">
               <p className="font-garamond text-sm text-bronze italic">
