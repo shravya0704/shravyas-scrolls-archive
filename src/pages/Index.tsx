@@ -5,6 +5,7 @@ import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Navigation from "@/components/Navigation";
 import FloatingParticles from "@/components/FloatingParticles";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <ProjectsSection />
       <ExperienceSection />
       <ContactSection />
+      <Toaster />
     </div>
   );
 };

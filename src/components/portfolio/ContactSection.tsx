@@ -3,19 +3,48 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Linkedin, Send, PenTool, Scroll } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Message from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    window.location.href = `mailto:shravyaazmani@gmail.com?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+    
+    try {
+      await emailjs.send(
+        'service_ed64n9w',
+        'template_29lm4ba',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        '62PXUc3wMCWP9_QHM'
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -134,13 +163,14 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                className="w-full relative overflow-hidden bg-gradient-mystical hover:scale-105 transition-all duration-300 font-cinzel font-bold text-lg py-3 h-auto group border-2 border-gold/30 hover:border-gold shadow-glow"
+                disabled={isSubmitting}
+                className="w-full relative overflow-hidden bg-gradient-mystical hover:scale-105 transition-all duration-300 font-cinzel font-bold text-lg py-3 h-auto group border-2 border-gold/30 hover:border-gold shadow-glow disabled:opacity-50 disabled:hover:scale-100"
               >
                 {/* Magical seal effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <div className="flex items-center gap-2 relative z-10">
-                  <Send className="w-5 h-5" />
-                  Send Message
+                  <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </div>
               </Button>
             </form>
