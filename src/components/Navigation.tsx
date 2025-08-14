@@ -94,37 +94,6 @@ const Navigation = () => {
                 <span className="absolute inset-0 rounded opacity-0 group-hover:opacity-20 transition-opacity duration-200 bg-gold/20 blur-sm" />
               </button>
             ))}
-            
-            {/* Contact Icons */}
-            <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gold/30">
-              <a
-                href="mailto:shravyaazmani@gmail.com"
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200 relative group",
-                  "hover:scale-110",
-                  isScrolled ? "text-parchment" : "text-parchment/90"
-                )}
-                title="Send Email"
-              >
-                <Mail className="w-5 h-5 group-hover:text-gold transition-colors duration-200" />
-                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-200 bg-gold/20 blur-sm" />
-              </a>
-              
-              <a
-                href="https://linkedin.com/in/shravya-azmani"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200 relative group",
-                  "hover:scale-110",
-                  isScrolled ? "text-parchment" : "text-parchment/90"
-                )}
-                title="LinkedIn Profile"
-              >
-                <Linkedin className="w-5 h-5 group-hover:text-gold transition-colors duration-200" />
-                <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-200 bg-gold/20 blur-sm" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

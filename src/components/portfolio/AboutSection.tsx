@@ -15,8 +15,7 @@ const AboutSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20 mb-8 hover:shadow-glow transition-all duration-300">
-            
-            <p className="font-garamond text-lg text-leather leading-relaxed mb-6">In a world of noise, I find meaning in structure. Whether it's decoding product-market fit or crafting a pitch for an early-stage idea, I enjoy bringing strategy, research, technology and storytelling together. My journey spans across AI, product, and consulting, where I've learned to transform complex problems into clear, actionable narratives.</p>
+            <p className="font-garamond text-lg text-leather leading-relaxed">In a world of noise, I find meaning in structure. Whether it's decoding product-market fit or crafting a pitch for an early-stage idea, I enjoy bringing strategy, research, technology and storytelling together. My journey spans across AI, product, and consulting, where I've learned to transform complex problems into clear, actionable narratives.</p>
           </div>
 
           <div className="bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg p-6 border border-caramel/20 shadow-deep hover:shadow-glow transition-all duration-300">
