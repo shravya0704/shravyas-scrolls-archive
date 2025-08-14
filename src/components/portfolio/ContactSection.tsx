@@ -81,11 +81,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-cinzel text-lg font-bold text-crimson">Email</h4>
-                  <p className="font-garamond text-leather">shravyaazmani@gmail.com</p>
+                  <p className="font-garamond text-leather">shravyawork07@gmail.com</p>
                 </div>
               </a>
 
-              <a href="https://linkedin.com/in/shravya-azmani" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
+              <a href="www.linkedin.com/in/shravya-azmani-357738281" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Linkedin className="w-6 h-6 text-mahogany" />
                 </div>
@@ -157,7 +157,7 @@ const ContactSection = () => {
                   required
                   rows={5}
                   className="flex w-full rounded-md border border-leather/30 bg-parchment/50 px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/20 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm font-garamond resize-none"
-                  placeholder="Share your thoughts, ideas, or project details..."
+                  placeholder="Share your thoughts..."
                 />
               </div>
 
