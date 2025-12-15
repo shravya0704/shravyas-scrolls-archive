@@ -1,46 +1,48 @@
-import { Badge } from "@/components/ui/badge";
-import { ScrollText } from "lucide-react";
 import { ReactNode } from "react";
+import { FileText } from "lucide-react";
+
+interface DocumentLink {
+  label: string;
+  url: string;
+}
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  details: string[];
-  technologies?: string[];
   icon?: ReactNode;
   timeline?: string;
+  documents?: DocumentLink[];
 }
 
-const ProjectCard = ({ title, description, details, technologies, icon, timeline }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, icon, timeline, documents }: ProjectCardProps) => {
   return (
-    <div className="bg-gradient-scroll rounded-lg p-6 shadow-deep border border-leather/20 hover:shadow-glow transition-all duration-300 group h-full">
-      <div className="flex items-start gap-3 mb-4">
-        <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-          <span className="text-mahogany text-xl">{icon || <ScrollText className="w-6 h-6" />}</span>
+    <div className="bg-gradient-scroll rounded-lg p-6 shadow-deep border border-leather/20 hover:shadow-glow transition-all duration-300 group h-full flex flex-col">
+      <div className="flex items-center justify-center mb-4">
+        <div className="w-16 h-16 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
+          <span className="text-parchment text-2xl">{icon || <FileText className="w-8 h-8" />}</span>
         </div>
       </div>
-      <h3 className="font-cinzel text-xl font-bold text-crimson mb-2">{title}</h3>
-      <p className="font-garamond text-leather mb-4 leading-relaxed">{description}</p>
+      
+      <h3 className="font-cinzel text-xl font-bold text-crimson mb-3 text-center">{title}</h3>
       
       {timeline && (
-        <p className="font-garamond italic text-bronze text-sm mb-4">{timeline}</p>
+        <p className="font-garamond italic text-bronze text-sm mb-3 text-center">{timeline}</p>
       )}
+      
+      <p className="font-garamond text-leather mb-4 leading-relaxed flex-grow">{description}</p>
 
-      <ul className="space-y-2 mb-4">
-        {details.map((detail, index) => (
-          <li key={index} className="font-garamond text-sm text-leather flex items-start gap-2">
-            <span className="text-amber mt-1">•</span>
-            <span>{detail}</span>
-          </li>
-        ))}
-      </ul>
-
-      {technologies && technologies.length > 0 && (
-        <div className="flex flex-wrap gap-2">
-          {technologies.map((tech, index) => (
-            <span key={index} className="inline-block bg-bronze/20 text-caramel px-3 py-1 rounded-full text-sm font-garamond border border-bronze/30">
-              {tech}
-            </span>
+      {documents && documents.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-auto pt-4">
+          {documents.map((doc, index) => (
+            <a
+              key={index}
+              href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-crimson hover:bg-burgundy text-parchment px-3 py-1.5 rounded text-sm font-garamond transition-colors duration-200"
+            >
+              {doc.label}
+            </a>
           ))}
         </div>
       )}
