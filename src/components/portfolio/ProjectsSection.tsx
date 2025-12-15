@@ -1,12 +1,23 @@
 import { ScrollText, Code, Briefcase, DollarSign, Car, Shirt, Sparkles, Leaf } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 
+const getViewerUrl = (url: string) => {
+  if (url.endsWith(".ppt") || url.endsWith(".pptx")) {
+    return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(
+      window.location.origin + url
+    )}`;
+  }
+  return url;
+};
+
+
 const ProjectsSection = () => {
   const technicalProjects = [
     {
       title: "MoneyVerse",
       description: "Created an interactive learning platform using MERN stack for Gen Z financial education. Led content architecture and gamification logic design, implemented story-based learning modules, and worked on frontend using React + Tailwind CSS. Incorporated user personas for intuitive onboarding and reward systems.",
       icon: <DollarSign className="w-8 h-8" />,
+      timeline: "College Project - Semester 4",
       documents: [
         // Add your documents here like:
         // { label: "PPT", url: "/documents/moneyverse.pptx" },
@@ -17,6 +28,7 @@ const ProjectsSection = () => {
       title: "BookMySpot",
       description: "Built a prototype web-based parking system to manage real-time slot availability and booking. Implemented backend logic using PHP, designed frontend in HTML/CSS/JS, created features to reduce wait time and booking conflicts, and mapped user journey for frictionless experience.",
       icon: <Car className="w-8 h-8" />,
+      timeline: "College Project - Semester 3",
       documents: [
         // Add your documents here
       ]
@@ -25,7 +37,7 @@ const ProjectsSection = () => {
       title: "SwiftStyle",
       description: "Conducted market research and designed a web prototype for AI-based personal styling platform. Surveyed 40+ users to validate demand for affordable styling solutions, designed web prototype and investor-facing assets, created pitch deck, product mockup, and poster. Positioned for Gen Z users and working professionals.",
       icon: <Shirt className="w-8 h-8" />,
-      timeline: "Submitted for Entrepreneurship Evaluation",
+      timeline: "College Project - Entrepreneurship Course",
       documents: [
         // Add your documents here
       ]
@@ -35,11 +47,16 @@ const ProjectsSection = () => {
   const businessProjects = [
     {
       title: "The Body Shop – Business Consulting Case Study",
-      description: "Conducted extensive secondary research into India's $36B BPC market and proposed strategic expansion solutions. Benchmarked growth strategies of major beauty brands, proposed localized sub-brand strategy targeting Tier 2/3 cities, and suggested omnichannel GTM strategy blending experiential retail and digital-first expansion. Frameworks Used: 4Ps, STP, Competitor Mapping.",
+      description: "Conducted secondary research on India’s $36B BPC market and evaluated strategies of top beauty brands.",
+      points: [
+        "Proposed a localized sub-brand strategy for Tier 2/3 cities, with digital-first and culturally tuned GTM.",
+        "Outlined omnichannel expansion via e-commerce, influencer marketing, and experiential retail.",
+        "Frameworks used: 4Ps, STP, Competitor Mapping."
+      ],
       icon: <Sparkles className="w-8 h-8" />,
-      timeline: "Competition: Case Challenge",
+      timeline: "Competition: Indian Case Challenge 2025, IIT Kharagpur",
       documents: [
-        // Add your documents here
+        { label: "PPT", url: "/documents/ICC.pptx" }
       ]
     },
     {
@@ -60,15 +77,15 @@ const ProjectsSection = () => {
           <div className="flex justify-center mb-6">
             <ScrollText className="w-12 h-12 text-gold animate-glow" />
           </div>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">CHAPTER 2</h2>
-          <p className="font-garamond text-leather italic text-2xl">Projects</p>
+          <h2 className="font-cinzel text-5xl md:text-6xl font-bold text-mahogany mb-4">CHAPTER 2</h2>
+          <p className="font-garamond text-leather italic text-3xl">Projects</p>
         </div>
 
         {/* Technical Projects */}
         <div className="max-w-7xl mx-auto mb-16">
           <div className="flex items-center gap-3 mb-8">
             <Code className="w-6 h-6 text-gold" />
-            <h3 className="font-cinzel text-2xl font-bold text-mahogany">Technical Projects</h3>
+            <h3 className="font-cinzel text-3xl font-bold text-mahogany">Technical Projects</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {technicalProjects.map((project, index) => (
@@ -83,7 +100,7 @@ const ProjectsSection = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <Briefcase className="w-6 h-6 text-gold" />
-            <h3 className="font-cinzel text-2xl font-bold text-mahogany">Product / Business Projects</h3>
+            <h3 className="font-cinzel text-3xl font-bold text-mahogany">Product / Business Projects</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {businessProjects.map((project, index) => (

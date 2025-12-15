@@ -12,9 +12,23 @@ interface ProjectCardProps {
   icon?: ReactNode;
   timeline?: string;
   documents?: DocumentLink[];
+  points?: string[];
 }
 
-const ProjectCard = ({ title, description, icon, timeline, documents }: ProjectCardProps) => {
+// Ensures PPT/PPTX open in-browser via Microsoft Office viewer; others open directly
+const getViewerUrl = (url: string) => {
+  const clean = url.split("?")[0];
+  const isPpt = /\.(ppt|pptx)$/i.test(clean);
+  if (!isPpt) return url;
+  try {
+    const absolute = new URL(url, window.location.origin).href;
+    return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(absolute)}`;
+  } catch {
+    return url;
+  }
+};
+
+const ProjectCard = ({ title, description, icon, timeline, documents, points }: ProjectCardProps) => {
   return (
     <div className="bg-gradient-scroll rounded-lg p-6 shadow-deep border border-leather/20 hover:shadow-glow transition-all duration-300 group h-full flex flex-col">
       <div className="flex items-center justify-center mb-4">
@@ -23,20 +37,32 @@ const ProjectCard = ({ title, description, icon, timeline, documents }: ProjectC
         </div>
       </div>
       
-      <h3 className="font-cinzel text-xl font-bold text-crimson mb-3 text-center">{title}</h3>
+      <h3 className="font-cinzel text-2xl md:text-3xl font-bold text-crimson mb-4 text-center">{title}</h3>
       
       {timeline && (
         <p className="font-garamond italic text-bronze text-sm mb-3 text-center">{timeline}</p>
       )}
       
-      <p className="font-garamond text-leather mb-4 leading-relaxed flex-grow">{description}</p>
+      {description && (
+        <p className="font-garamond text-leather text-lg md:text-xl mb-4 leading-relaxed">
+          {description}
+        </p>
+      )}
+
+      {points && points.length > 0 && (
+        <ul className="font-garamond text-leather text-lg md:text-xl mb-4 leading-relaxed list-disc pl-6 space-y-2">
+          {points.map((pt, idx) => (
+            <li key={idx}>{pt}</li>
+          ))}
+        </ul>
+      )}
 
       {documents && documents.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-auto pt-4">
           {documents.map((doc, index) => (
             <a
               key={index}
-              href={doc.url}
+              href={getViewerUrl(doc.url)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-crimson hover:bg-burgundy text-parchment px-3 py-1.5 rounded text-sm font-garamond transition-colors duration-200"
