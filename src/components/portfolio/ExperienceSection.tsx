@@ -4,7 +4,7 @@ const ExperienceSection = () => {
     title: "🔹 Founder's Office Intern",
     company: "WittingAI (Remote)",
     timeline: "Jun 2025 – Present",
-    details: ["Wrote and structured pitch decks for client presentations, investor outreach, and government grant applications", "Conducted competitive benchmarking across 8+ AI startups; built positioning matrices to define whitespace opportunities", "Supported GTM strategies for new AI products by conducting trend research and user persona mapping"]
+    details: ["Designed pitch decks for clients, investors, and government grants by combining market insights with product storytelling", "Conducted competitive benchmarking on 8+ AI startups; mapped modularity, use cases, features to build positioning maps.", "Researched market trends and supported the formulation of business strategies for AI-based products."]
   }, {
     title: "🔹 Machine Learning Intern",
     company: "Claidroid Technologies",
@@ -22,7 +22,7 @@ const ExperienceSection = () => {
   }, {
     category: "AI & Development",
     icon: <Code className="w-5 h-5" />,
-    skills: ["Python", "C", "TensorFlow", "Keras", "HTML", "CSS", "JavaScript","MERN Stack","AI Tools"]
+    skills: ["Python", "C", "TensorFlow", "Keras", "HTML", "CSS", "JavaScript","React","MongoDB","Express.js","Node.js","Supabase","Vercel","Render","AI Tools"]
   }, {
     category: "Soft Skills",
     icon: <Users className="w-5 h-5" />,

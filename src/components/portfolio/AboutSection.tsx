@@ -19,7 +19,7 @@ const AboutSection = () => {
               <p>In a world full of noise, I find meaning in structure.</p>
               <p>Whether it's building products from 0 to 1, obsessing over solving user problems or crafting a pitch for an early-stage idea, I enjoy bringing technology, strategy, research and storytelling together.</p>
               <p>My journey spans across AI, webdev, product, and consulting, where I've learned to transform complex problems into clear, actionable narratives.</p>
-              <p>Long story short: If you were looking for a generalist (who won't run away when the conversation gets technical), you're probably at the right place :)</p>
+              
             </div>
           </div>
 

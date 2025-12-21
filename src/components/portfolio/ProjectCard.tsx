@@ -8,25 +8,12 @@ interface DocumentLink {
 
 interface ProjectCardProps {
   title: string;
-  description: string;
+  description?: string;
   icon?: ReactNode;
   timeline?: string;
   documents?: DocumentLink[];
   points?: string[];
 }
-
-// Ensures PPT/PPTX open in-browser via Microsoft Office viewer; others open directly
-const getViewerUrl = (url: string) => {
-  const clean = url.split("?")[0];
-  const isPpt = /\.(ppt|pptx)$/i.test(clean);
-  if (!isPpt) return url;
-  try {
-    const absolute = new URL(url, window.location.origin).href;
-    return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(absolute)}`;
-  } catch {
-    return url;
-  }
-};
 
 const ProjectCard = ({ title, description, icon, timeline, documents, points }: ProjectCardProps) => {
   return (
@@ -62,7 +49,7 @@ const ProjectCard = ({ title, description, icon, timeline, documents, points }: 
           {documents.map((doc, index) => (
             <a
               key={index}
-              href={getViewerUrl(doc.url)}
+              href={doc.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-crimson hover:bg-burgundy text-parchment px-3 py-1.5 rounded text-sm font-garamond transition-colors duration-200"
