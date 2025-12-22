@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Linkedin, Send, PenTool, Scroll } from "lucide-react";
+import { Mail, Linkedin, Send, MessageSquare, Sparkles } from "lucide-react";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
+import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -54,140 +56,165 @@ const ContactSection = () => {
     }));
   };
 
-  return <section id="contact" className="py-20 bg-gradient-to-b from-maroon/10 to-mahogany/20 scroll-mt-16">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+  return (
+    <section id="contact" className="py-24 bg-gradient-to-b from-muted/20 to-background scroll-mt-16 relative">
+      {/* Subtle pattern */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--mahogany)) 1px, transparent 0)`,
+        backgroundSize: '32px 32px'
+      }} />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <AnimatedSection animation="fade-up" className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <Send className="w-12 h-12 text-gold animate-glow" />
+            <div className="icon-container w-16 h-16 animate-glow-pulse">
+              <Send className="w-8 h-8 text-gold" />
+            </div>
           </div>
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-mahogany mb-4">
-            Contact Me
+          <h2 className="font-cinzel text-4xl md:text-5xl lg:text-6xl font-bold text-mahogany mb-3 text-shadow-elegant">
+            Get In Touch
           </h2>
-          <p className="font-garamond text-xl text-leather italic">Let's start a conversation and build something.</p>
-        </div>
+          <p className="font-garamond text-leather/80 italic text-xl md:text-2xl">
+            Let's start a conversation and build something together.
+          </p>
+          <div className="section-divider mt-8" />
+        </AnimatedSection>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div className="bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20">
-            <div className="flex items-center gap-3 mb-6">
-              <Scroll className="w-8 h-8 text-gold" />
-              <h3 className="font-cinzel text-2xl font-bold text-crimson">Let's Connect</h3>
-            </div>
-<div className="space-y-4">
-  {/* Email link - opens Gmail compose in a new tab */}
-  <a 
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=shravyawork07@gmail.com" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group"
-  >
-    <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
-      <Mail className="w-6 h-6 text-mahogany" />
-    </div>
-    <div>
-      <h4 className="font-cinzel text-lg font-bold text-crimson">Email</h4>
-      <p className="font-garamond text-leather">shravyawork07@gmail.com</p>
-    </div>
-  </a>
+          <AnimatedSection animation="fade-right" delay={100}>
+            <div className="glass-card hover-card-sleek p-8 h-full">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="icon-container w-12 h-12">
+                  <Sparkles className="w-6 h-6 text-gold" />
+                </div>
+                <h3 className="font-cinzel text-xl md:text-2xl font-bold text-mahogany">Let's Connect</h3>
+              </div>
 
-  {/* LinkedIn link - opens in new tab */}
-  <a 
-    href="https://www.linkedin.com/in/shravya-azmani-357738281/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex items-center gap-4 p-4 bg-gradient-to-r from-bronze/10 to-mahogany/10 rounded-lg border border-caramel/20 hover:shadow-glow transition-all duration-300 group"
-  >
-    <div className="w-12 h-12 rounded-full bg-gradient-mystical flex items-center justify-center group-hover:scale-110 transition-transform">
-      <Linkedin className="w-6 h-6 text-mahogany" />
-    </div>
-    <div>
-      <h4 className="font-cinzel text-lg font-bold text-crimson">LinkedIn</h4>
-      <p className="font-garamond text-leather">Connect with me</p>
-    </div>
-  </a>
-</div>
+              <div className="space-y-4">
+                <AnimatedItem index={0} animation="fade-left" baseDelay={200}>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=shravyawork07@gmail.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-5 rounded-xl bg-gradient-to-r from-bronze/5 to-mahogany/5 border border-gold/10 transition-all duration-300 hover:border-gold/30 hover:shadow-card group"
+                  >
+                    <div className="icon-container w-14 h-14 group-hover:scale-110 transition-transform">
+                      <Mail className="w-6 h-6 text-gold" />
+                    </div>
+                    <div>
+                      <h4 className="font-cinzel text-lg font-bold text-mahogany">Email</h4>
+                      <p className="font-inter text-leather/80 text-sm">shravyawork07@gmail.com</p>
+                    </div>
+                  </a>
+                </AnimatedItem>
 
-            <div className="text-center pt-6">
-              <p className="font-garamond text-sm text-bronze italic">
-                "The best stories are born from meaningful conversations."
-              </p>
+                <AnimatedItem index={1} animation="fade-left" baseDelay={200}>
+                  <a 
+                    href="https://www.linkedin.com/in/shravya-azmani-357738281/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-5 rounded-xl bg-gradient-to-r from-bronze/5 to-mahogany/5 border border-gold/10 transition-all duration-300 hover:border-gold/30 hover:shadow-card group"
+                  >
+                    <div className="icon-container w-14 h-14 group-hover:scale-110 transition-transform">
+                      <Linkedin className="w-6 h-6 text-gold" />
+                    </div>
+                    <div>
+                      <h4 className="font-cinzel text-lg font-bold text-mahogany">LinkedIn</h4>
+                      <p className="font-inter text-leather/80 text-sm">Connect with me</p>
+                    </div>
+                  </a>
+                </AnimatedItem>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-gold/10">
+                <p className="font-garamond text-sm text-bronze/70 italic text-center">
+                  "The best stories are born from meaningful conversations."
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Contact Form */}
-          <div className="bg-gradient-scroll rounded-lg p-8 shadow-deep border border-leather/20 relative overflow-hidden">
-            {/* Parchment texture overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-parchment/5 to-transparent pointer-events-none"></div>
-            
-            <div className="flex items-center gap-3 mb-6 relative z-10">
-              <PenTool className="w-8 h-8 text-gold" />
-              <h3 className="font-cinzel text-2xl font-bold text-crimson">Send a Message</h3>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="font-cinzel text-mahogany font-medium">
-                  Your Name
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-parchment/50 border-leather/30 focus:border-gold focus:ring-gold/20 font-garamond"
-                  placeholder="Enter your name..."
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email" className="font-cinzel text-mahogany font-medium">
-                  Email Address
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-parchment/50 border-leather/30 focus:border-gold focus:ring-gold/20 font-garamond"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message" className="font-cinzel text-mahogany font-medium">
-                  Your Message
-                </Label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="flex w-full rounded-md border border-leather/30 bg-parchment/50 px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/20 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm font-garamond resize-none"
-                  placeholder="Share your thoughts..."
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full relative overflow-hidden bg-gradient-mystical hover:scale-105 transition-all duration-300 font-cinzel font-bold text-lg py-3 h-auto group border-2 border-gold/30 hover:border-gold shadow-glow disabled:opacity-50 disabled:hover:scale-100"
-              >
-                {/* Magical seal effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                <div className="flex items-center gap-2 relative z-10">
-                  <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+          <AnimatedSection animation="fade-left" delay={200}>
+            <div className="glass-card hover-card-sleek p-8 relative overflow-hidden h-full">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="icon-container w-12 h-12">
+                  <MessageSquare className="w-6 h-6 text-gold" />
                 </div>
-              </Button>
-            </form>
-          </div>
+                <h3 className="font-cinzel text-xl md:text-2xl font-bold text-mahogany">Send a Message</h3>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="font-inter text-mahogany font-medium text-sm">
+                    Your Name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-gold/20 focus:border-gold focus:ring-gold/20 font-inter rounded-xl h-12"
+                    placeholder="Enter your name..."
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="font-inter text-mahogany font-medium text-sm">
+                    Email Address
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-gold/20 focus:border-gold focus:ring-gold/20 font-inter rounded-xl h-12"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="font-inter text-mahogany font-medium text-sm">
+                    Your Message
+                  </Label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="flex w-full rounded-xl border border-gold/20 bg-background/50 px-4 py-3 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/20 focus-visible:border-gold disabled:cursor-not-allowed disabled:opacity-50 font-inter resize-none"
+                    placeholder="Share your thoughts..."
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-crimson to-maroon hover:from-maroon hover:to-burgundy text-parchment font-inter font-medium text-base py-6 h-auto rounded-xl transition-all duration-500 hover:shadow-deep disabled:opacity-50 group relative overflow-hidden"
+                >
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 overflow-hidden rounded-xl">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  </div>
+                  <div className="flex items-center gap-2 relative z-10">
+                    <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </div>
+                </Button>
+              </form>
+            </div>
+          </AnimatedSection>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactSection;
