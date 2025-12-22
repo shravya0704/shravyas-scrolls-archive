@@ -1,4 +1,5 @@
-import { Scroll, Star, Zap, Code, Users, Briefcase, Brain } from "lucide-react";
+import { Scroll, Star, Zap, Code, Users, Brain } from "lucide-react";
+import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -61,7 +62,7 @@ const ExperienceSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <AnimatedSection animation="fade-up" className="text-center mb-16">
           <div className="flex justify-center mb-6">
             <div className="icon-container w-16 h-16 animate-glow-pulse">
               <Scroll className="w-8 h-8 text-gold" />
@@ -72,79 +73,89 @@ const ExperienceSection = () => {
           </h2>
           <p className="font-garamond text-leather/80 italic text-2xl md:text-3xl">Work Experience</p>
           <div className="section-divider mt-8" />
-        </div>
+        </AnimatedSection>
 
         {/* Experience Cards */}
         <div className="max-w-4xl mx-auto mb-16 space-y-6">
           {experiences.map((exp, index) => (
-            <div 
-              key={index} 
-              className="glass-card hover-card-sleek p-8 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+            <AnimatedItem
+              key={index}
+              index={index}
+              animation="fade-left"
+              staggerDelay={200}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="icon-container w-12 h-12 flex-shrink-0">
-                  {exp.icon}
+              <div className="glass-card hover-card-sleek p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="icon-container w-12 h-12 flex-shrink-0">
+                    {exp.icon}
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-cinzel text-xl font-bold text-mahogany">{exp.title}</h3>
+                    <p className="font-inter text-sm text-gold font-medium tracking-wide">
+                      {exp.company} {exp.location && `• ${exp.location}`}
+                    </p>
+                    <p className="font-inter text-xs text-bronze/70 uppercase tracking-wider mt-1">
+                      {exp.timeline}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-grow">
-                  <h3 className="font-cinzel text-xl font-bold text-mahogany">{exp.title}</h3>
-                  <p className="font-inter text-sm text-gold font-medium tracking-wide">
-                    {exp.company} {exp.location && `• ${exp.location}`}
-                  </p>
-                  <p className="font-inter text-xs text-bronze/70 uppercase tracking-wider mt-1">
-                    {exp.timeline}
-                  </p>
-                </div>
+                
+                <ul className="space-y-3 ml-16">
+                  {exp.details.map((detail, detailIndex) => (
+                    <li key={detailIndex} className="flex items-start gap-3 font-garamond text-leather/90">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <ul className="space-y-3 ml-16">
-                {exp.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-start gap-3 font-garamond text-leather/90">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </AnimatedItem>
           ))}
         </div>
 
         {/* Skills */}
-        <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-8 md:p-10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="icon-container w-12 h-12">
-                <Star className="w-6 h-6 text-gold" />
-              </div>
-              <h3 className="font-cinzel text-2xl font-bold text-mahogany">Skills</h3>
-              <div className="flex-grow h-px bg-gradient-to-r from-gold/30 to-transparent" />
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              {skillCategories.map((category, index) => (
-                <div 
-                  key={index} 
-                  className="p-5 rounded-xl bg-gradient-to-r from-bronze/5 to-mahogany/5 border border-gold/10 transition-all duration-300 hover:border-gold/25 hover:shadow-card"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-gold">{category.icon}</span>
-                    <h4 className="font-cinzel font-bold text-mahogany">{category.category}</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIdx) => (
-                      <span 
-                        key={skillIdx}
-                        className="px-3 py-1 text-sm font-inter text-leather/80 bg-background/50 rounded-full border border-gold/10"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+        <AnimatedSection animation="fade-up" delay={100}>
+          <div className="max-w-4xl mx-auto">
+            <div className="glass-card p-8 md:p-10">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="icon-container w-12 h-12">
+                  <Star className="w-6 h-6 text-gold" />
                 </div>
-              ))}
+                <h3 className="font-cinzel text-2xl font-bold text-mahogany">Skills</h3>
+                <div className="flex-grow h-px bg-gradient-to-r from-gold/30 to-transparent" />
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {skillCategories.map((category, index) => (
+                  <AnimatedItem
+                    key={index}
+                    index={index}
+                    animation="scale"
+                    baseDelay={200}
+                    staggerDelay={100}
+                  >
+                    <div className="p-5 rounded-xl bg-gradient-to-r from-bronze/5 to-mahogany/5 border border-gold/10 transition-all duration-300 hover:border-gold/25 hover:shadow-card h-full">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-gold">{category.icon}</span>
+                        <h4 className="font-cinzel font-bold text-mahogany">{category.category}</h4>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {category.skills.map((skill, skillIdx) => (
+                          <span 
+                            key={skillIdx}
+                            className="px-3 py-1 text-sm font-inter text-leather/80 bg-background/50 rounded-full border border-gold/10"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </AnimatedItem>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
