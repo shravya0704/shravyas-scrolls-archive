@@ -11,10 +11,10 @@ import {
   Shirt, 
   Apple, 
   Dumbbell, 
-  TrendingUp,
-  Github
+  TrendingUp
 } from "lucide-react";
 import ProjectCard from "./ProjectCard";
+import { AnimatedSection, AnimatedItem } from "@/components/ui/animated-section";
 
 const ProjectsSection = () => {
   const technicalProjects = [
@@ -145,7 +145,7 @@ const ProjectsSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <AnimatedSection animation="fade-up" className="text-center mb-20">
           <div className="flex justify-center mb-6">
             <div className="icon-container w-16 h-16 animate-glow-pulse">
               <ScrollText className="w-8 h-8 text-gold" />
@@ -156,48 +156,52 @@ const ProjectsSection = () => {
           </h2>
           <p className="font-garamond text-leather/80 italic text-2xl md:text-3xl">Projects</p>
           <div className="section-divider mt-8" />
-        </div>
+        </AnimatedSection>
 
         {/* Technical Projects */}
         <div className="max-w-7xl mx-auto mb-20">
-          <div className="flex items-center gap-4 mb-10">
+          <AnimatedSection animation="fade-right" className="flex items-center gap-4 mb-10">
             <div className="icon-container w-12 h-12">
               <Code className="w-6 h-6 text-gold" />
             </div>
             <h3 className="font-cinzel text-2xl md:text-3xl font-bold text-mahogany">Technical Projects</h3>
             <div className="flex-grow h-px bg-gradient-to-r from-gold/30 to-transparent" />
-          </div>
+          </AnimatedSection>
+          
           <div className="grid md:grid-cols-2 gap-8">
             {technicalProjects.map((project, index) => (
-              <div 
-                key={index} 
-                className="animate-fade-in-up" 
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+              <AnimatedItem
+                key={index}
+                index={index}
+                animation="fade-up"
+                staggerDelay={150}
               >
                 <ProjectCard {...project} />
-              </div>
+              </AnimatedItem>
             ))}
           </div>
         </div>
 
         {/* Product/Business Projects */}
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
+          <AnimatedSection animation="fade-right" className="flex items-center gap-4 mb-10">
             <div className="icon-container w-12 h-12">
               <Briefcase className="w-6 h-6 text-gold" />
             </div>
             <h3 className="font-cinzel text-2xl md:text-3xl font-bold text-mahogany">Product / Business Projects</h3>
             <div className="flex-grow h-px bg-gradient-to-r from-gold/30 to-transparent" />
-          </div>
+          </AnimatedSection>
+          
           <div className="grid md:grid-cols-2 gap-8">
             {businessProjects.map((project, index) => (
-              <div 
-                key={index} 
-                className="animate-fade-in-up" 
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+              <AnimatedItem
+                key={index}
+                index={index}
+                animation="fade-up"
+                staggerDelay={150}
               >
                 <ProjectCard {...project} />
-              </div>
+              </AnimatedItem>
             ))}
           </div>
         </div>
