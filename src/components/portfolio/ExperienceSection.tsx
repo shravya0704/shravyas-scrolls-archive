@@ -22,7 +22,7 @@ const ExperienceSection = () => {
   }, {
     category: "AI & Development",
     icon: <Code className="w-5 h-5" />,
-    skills: ["Python", "C", "TensorFlow", "Keras", "HTML", "CSS", "JavaScript","React","MongoDB","Express.js","Node.js","Supabase","Vercel","Render","AI Tools"]
+    skills: ["Python", "C","C++" ,"TensorFlow", "Keras", "HTML", "CSS", "JavaScript","React","MongoDB","Express.js","Node.js","Supabase","Vercel","Render","AI Tools"]
   }, {
     category: "Soft Skills",
     icon: <Users className="w-5 h-5" />,

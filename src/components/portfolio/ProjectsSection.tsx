@@ -9,7 +9,7 @@ const ProjectsSection = () => {
       title: "ColdConnect",
       description: "Cold Outreach Tool For Students",
       icon: <DollarSign className="w-8 h-8" />,
-      timeline: "  (Personal Project)",
+      timeline: "Personal Project",
       points: [
         "Led end-to-end product development (problem discovery → workflow design → launch), building a tool that reduced email creation time from 20 mins to less than 2 mins.",
         "Designed a smart contact-finding engine using pattern prediction + lightweight scraping, generating probable decision-maker emails without paid APIs.",
