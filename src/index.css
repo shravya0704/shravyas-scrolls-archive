@@ -1,16 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Grand Library Color Palette - Harvard Style */
-    --background: 35 35% 94%; /* Warm cream parchment */
-    --foreground: 15 25% 15%; /* Deep brown */
+    /* Grand Library Color Palette - Refined */
+    --background: 35 35% 94%;
+    --foreground: 15 25% 15%;
 
     --card: 35 40% 96%;
     --card-foreground: 15 25% 15%;
@@ -18,16 +16,16 @@ All colors MUST be HSL.
     --popover: 35 40% 96%;
     --popover-foreground: 15 25% 15%;
 
-    --primary: 45 95% 48%; /* Rich gold */
+    --primary: 45 95% 48%;
     --primary-foreground: 15 25% 15%;
 
-    --secondary: 355 75% 25%; /* Deep crimson */
+    --secondary: 355 75% 25%;
     --secondary-foreground: 35 35% 94%;
 
     --muted: 30 25% 88%;
     --muted-foreground: 15 25% 45%;
 
-    --accent: 25 60% 45%; /* Burnt caramel */
+    --accent: 25 60% 45%;
     --accent-foreground: 35 35% 94%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,7 +35,7 @@ All colors MUST be HSL.
     --input: 30 20% 82%;
     --ring: 45 95% 48%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
     /* Grand Library Color Variables */
     --parchment: 35 35% 94%;
@@ -59,11 +57,14 @@ All colors MUST be HSL.
     --gradient-parchment: linear-gradient(180deg, hsl(var(--parchment)) 0%, hsl(30 30% 88%) 100%);
     --gradient-library: linear-gradient(135deg, hsl(var(--mahogany)) 0%, hsl(var(--burgundy)) 50%, hsl(var(--crimson)) 100%);
     --gradient-scroll: linear-gradient(180deg, hsl(var(--parchment)) 0%, hsl(32 38% 92%) 50%, hsl(var(--parchment)) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(35 40% 96% / 0.9) 0%, hsl(35 35% 94% / 0.7) 100%);
     
     /* Enhanced Shadows */
     --shadow-scroll: 0 8px 25px -8px hsl(var(--mahogany) / 0.4);
-    --shadow-glow: 0 0 20px hsl(var(--gold) / 0.5);
-    --shadow-deep: 0 12px 40px -12px hsl(var(--burgundy) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--gold) / 0.4);
+    --shadow-deep: 0 20px 60px -20px hsl(var(--burgundy) / 0.25);
+    --shadow-elegant: 0 4px 20px -4px hsl(var(--mahogany) / 0.15), 0 12px 40px -12px hsl(var(--burgundy) / 0.2);
+    --shadow-card: 0 2px 8px -2px hsl(var(--mahogany) / 0.1), 0 8px 24px -8px hsl(var(--burgundy) / 0.15);
 
     --sidebar-background: 36 25% 90%;
     --sidebar-foreground: 20 15% 18%;
@@ -76,7 +77,6 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Grand Library Theme */
     --background: 15 25% 8%;
     --foreground: 35 35% 94%;
 
@@ -105,7 +105,6 @@ All colors MUST be HSL.
     --input: 15 25% 20%;
     --ring: 45 95% 58%;
     
-    /* Dark Library Variables */
     --parchment: 15 25% 8%;
     --sepia: 35 35% 94%;
     --gold: 45 95% 58%;
@@ -120,11 +119,11 @@ All colors MUST be HSL.
     --burgundy: 345 80% 30%;
     --leather: 20 40% 40%;
     
-    /* Dark Library Gradients */
     --gradient-mystical: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--crimson)) 100%);
     --gradient-parchment: linear-gradient(180deg, hsl(var(--parchment)) 0%, hsl(15 25% 12%) 100%);
     --gradient-library: linear-gradient(135deg, hsl(var(--mahogany)) 0%, hsl(var(--burgundy)) 50%, hsl(var(--crimson)) 100%);
     --gradient-scroll: linear-gradient(180deg, hsl(var(--parchment)) 0%, hsl(15 25% 12%) 50%, hsl(var(--parchment)) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(15 25% 12% / 0.9) 0%, hsl(15 25% 8% / 0.7) 100%);
     
     --sidebar-background: 15 25% 10%;
     --sidebar-foreground: 35 35% 94%;
@@ -143,10 +142,120 @@ All colors MUST be HSL.
   }
 
   html {
-    font-size: 18px;
+    font-size: 17px;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground text-lg md:text-xl;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'EB Garamond', serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--gold) / 0.15);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(var(--gold) / 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Sleek hover card */
+  .hover-card-sleek {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .hover-card-sleek:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--shadow-deep), 0 0 40px hsl(var(--gold) / 0.15);
+  }
+
+  /* Modern gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--amber)) 50%, hsl(var(--gold)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--gold)), hsl(var(--crimson)));
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply relative py-4;
+  }
+
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.5), transparent);
+  }
+
+  /* Icon container */
+  .icon-container {
+    @apply flex items-center justify-center rounded-xl transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--mahogany) / 0.1) 0%, hsl(var(--burgundy) / 0.15) 100%);
+    border: 1px solid hsl(var(--gold) / 0.2);
+  }
+
+  .icon-container:hover {
+    background: linear-gradient(135deg, hsl(var(--gold) / 0.15) 0%, hsl(var(--crimson) / 0.15) 100%);
+    border-color: hsl(var(--gold) / 0.4);
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.2);
+  }
+}
+
+@layer utilities {
+  /* Text shadow for headings */
+  .text-shadow-elegant {
+    text-shadow: 0 2px 10px hsl(var(--mahogany) / 0.2);
+  }
+
+  /* Subtle noise texture */
+  .noise-texture {
+    position: relative;
+  }
+
+  .noise-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
   }
 }

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ScrollText, Sparkles } from "lucide-react";
+import { ArrowDown, Sparkles } from "lucide-react";
 import shravyaPortrait from "@/assets/shravya-portrait.jpg";
 
 const HeroSection = () => {
@@ -8,109 +8,89 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library animate-fade-in">
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-2 h-2 bg-gold rounded-full animate-float opacity-60"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-amber rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-gold rounded-full animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-20 w-1 h-1 bg-crimson rounded-full animate-float opacity-30" style={{ animationDelay: '0.5s' }}></div>
-        
-        {/* Library atmosphere particles */}
-        <div className="absolute top-1/3 left-10 w-1.5 h-1.5 bg-crimson rounded-full animate-drift opacity-45" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-60 right-1/4 w-1 h-1 bg-amber rounded-full animate-spiral opacity-35" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-1/3 right-10 w-2 h-2 bg-bronze rounded-full animate-float opacity-55" style={{ animationDelay: '2.5s' }}></div>
-        <div className="absolute top-80 left-1/2 w-1 h-1 bg-maroon rounded-full animate-drift opacity-40" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-caramel rounded-full animate-spiral opacity-30" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute top-1/2 right-40 w-1 h-1 bg-mahogany rounded-full animate-float opacity-50" style={{ animationDelay: '3.2s' }}></div>
-        
-        {/* Twinkling stars */}
-        <div className="absolute top-24 right-1/3 w-0.5 h-0.5 bg-gold rounded-full animate-twinkle opacity-70" style={{ animationDelay: '2.8s' }}></div>
-        <div className="absolute bottom-24 left-40 w-0.5 h-0.5 bg-amber rounded-full animate-twinkle opacity-60" style={{ animationDelay: '1.2s' }}></div>
-        <div className="absolute top-1/4 left-1/2 w-0.5 h-0.5 bg-burgundy rounded-full animate-twinkle opacity-50" style={{ animationDelay: '4.5s' }}></div>
-      </div>
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library">
+      {/* Elegant gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mahogany/10 to-burgundy/20" />
+      
+      {/* Subtle radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 flex items-center justify-between max-w-7xl">
-        {/* Parchment scroll with content */}
-        <div className="flex-1 max-w-3xl">
-          <div className="relative">
-            {/* Parchment background */}
-            <div className="bg-gradient-scroll rounded-lg p-12 shadow-deep border-2 border-leather/30 animate-unroll">
-              {/* Decorative scroll edges */}
-              <div className="absolute -left-2 top-4 bottom-4 w-4 bg-gradient-to-b from-caramel via-bronze to-mahogany rounded-full opacity-60"></div>
-              <div className="absolute -right-2 top-4 bottom-4 w-4 bg-gradient-to-b from-caramel via-bronze to-mahogany rounded-full opacity-60"></div>
-              
-              <div className="animate-scroll-reveal">
-                {/* Mystical header */}
-                <div className="mb-8 flex justify-center">
-                  <div className="relative">
-                    <ScrollText className="w-16 h-16 text-gold animate-glow" />
-                    <Sparkles className="w-6 h-6 text-amber absolute -top-2 -right-2 animate-pulse" />
-                  </div>
-                </div>
-
-                <h1 className="font-cinzel text-4xl md:text-6xl font-bold mb-6 text-mahogany text-center">
-                  HI, I AM
-                  <span className="block text-gold bg-gradient-mystical bg-clip-text text-transparent mt-2">
-                    Shravya Azmani
-                  </span>
-                </h1>
-                
-                <p className="font-garamond text-lg md:text-xl italic text-leather text-center mb-8">
-                  Tech And Business Enthusiast
-                </p>
-
-                <div className="flex justify-center">
-                  <Button 
-                    onClick={scrollToAbout}
-                    size="lg" 
-                    className="font-garamond text-lg px-8 py-3 bg-crimson hover:bg-maroon text-white shadow-glow hover:shadow-deep transition-all duration-300"
-                  >
-                    Begin Exploring
-                  </Button>
-                </div>
+      <div className="container mx-auto px-6 flex items-center justify-between max-w-7xl relative z-10">
+        {/* Main content */}
+        <div className="flex-1 max-w-2xl">
+          <div className="glass-card p-10 md:p-14 animate-fade-in noise-texture">
+            {/* Decorative top accent */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-20 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full" />
+            </div>
+            
+            {/* Sparkle icon */}
+            <div className="flex justify-center mb-8">
+              <div className="icon-container w-14 h-14 animate-glow-pulse">
+                <Sparkles className="w-7 h-7 text-gold" />
               </div>
+            </div>
+
+            <h1 className="font-cinzel text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-mahogany text-center leading-tight">
+              Hi, I'm
+              <span className="block gradient-text mt-2">
+                Shravya Azmani
+              </span>
+            </h1>
+            
+            <p className="font-inter text-base md:text-lg text-leather/80 text-center mb-10 tracking-wide">
+              Tech & Business Enthusiast
+            </p>
+
+            <div className="flex justify-center">
+              <Button 
+                onClick={scrollToAbout}
+                size="lg" 
+                className="font-inter text-base px-8 py-6 bg-gradient-to-r from-crimson to-maroon hover:from-maroon hover:to-burgundy text-parchment shadow-elegant hover:shadow-deep transition-all duration-500 rounded-xl group"
+              >
+                Begin Exploring
+                <ArrowDown className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Circular portrait space */}
-        <div className="flex-1 max-w-md ml-12 hidden lg:block">
-          <div className="relative">
-            {/* Circular grid pattern background */}
-            <div className="w-80 h-80 mx-auto relative">
-              {/* Grid circles */}
-              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-2 opacity-30">
-                {Array.from({ length: 64 }).map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`rounded-full ${
-                      Math.random() > 0.7 ? 'bg-gold/40' : 
-                      Math.random() > 0.5 ? 'bg-amber/30' : 'bg-bronze/20'
-                    } animate-twinkle`}
-                    style={{ animationDelay: `${Math.random() * 3}s` }}
-                  />
-                ))}
-              </div>
+        {/* Portrait */}
+        <div className="flex-1 max-w-md ml-16 hidden lg:block">
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            {/* Glow effect behind portrait */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-amber/10 to-crimson/20 rounded-full blur-2xl scale-110" />
+            
+            {/* Portrait container */}
+            <div className="relative w-80 h-80 mx-auto">
+              {/* Outer ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-gold/30 animate-[spin_30s_linear_infinite]" />
+              <div className="absolute inset-3 rounded-full border border-amber/20 animate-[spin_25s_linear_infinite_reverse]" />
               
-              {/* Main circular portrait area */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-parchment/40 via-gold/20 to-mahogany/30 border-4 border-gold/50 shadow-deep flex items-center justify-center backdrop-blur-sm animate-fade-in overflow-hidden">
+              {/* Main portrait */}
+              <div className="absolute inset-6 rounded-full overflow-hidden border-4 border-gold/40 shadow-deep">
                 <img 
                   src={shravyaPortrait} 
-                  alt="Shravya Azmani Portrait" 
-                  className="w-full h-full object-cover rounded-full filter sepia-[20%] contrast-[110%] brightness-[95%] saturate-[85%] hue-rotate-[10deg]"
+                  alt="Shravya Azmani" 
+                  className="w-full h-full object-cover"
                   style={{
-                    filter: "sepia(15%) contrast(110%) brightness(95%) saturate(85%) hue-rotate(8deg)"
+                    filter: "sepia(10%) contrast(105%) brightness(98%) saturate(90%)"
                   }}
                 />
               </div>
               
-              {/* Decorative orbital rings */}
-              <div className="absolute inset-0 rounded-full border border-gold/20 animate-[spin_20s_linear_infinite]"></div>
-              <div className="absolute inset-2 rounded-full border border-amber/20 animate-[spin_25s_linear_infinite_reverse]"></div>
-              <div className="absolute inset-6 rounded-full border border-bronze/20 animate-[spin_30s_linear_infinite]"></div>
+              {/* Corner accents */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-8 border-t-2 border-gold/40" />
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-8 border-b-2 border-gold/40" />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
+        <div className="w-6 h-10 rounded-full border-2 border-gold/40 flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-gold/60 rounded-full animate-bounce" />
         </div>
       </div>
     </section>
