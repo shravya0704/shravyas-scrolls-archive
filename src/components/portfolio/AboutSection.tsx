@@ -40,19 +40,19 @@ const AboutSection = () => {
             <div className="glass-card hover-card-sleek p-8 md:p-10">
               <div className="font-garamond text-lg md:text-xl text-leather/90 leading-relaxed space-y-6">
                 <p className="text-xl md:text-2xl text-mahogany font-medium">
-                  In a world full of noise, I find meaning in structure.
+                  I started in computer science — but I don’t stop at code.
                 </p>
-                
+
                 <p>
-                  Whether it's building products from 0 to 1, obsessing over solving user problems or crafting a pitch for an early-stage idea, I enjoy bringing technology, strategy, research and storytelling together.
+                  I build products with a strong technical backbone and a clear business lens, focusing on user problems, market logic, and execution that actually ships.
                 </p>
-                
+
                 <p>
-                  My journey spans across AI, webdev, product, and consulting, where I've learned to transform complex problems into clear, actionable narratives.
+                  My work spans AI, web development, product thinking, and strategy.
                 </p>
-                
+
                 <p className="text-lg text-bronze/90 italic border-l-2 border-gold/30 pl-4">
-                  Long story short: If you were looking for a generalist (who won't run away when the conversation gets technical), you're probably at the right place :)
+                  In short: I’m a techie who understands business, and a product thinker who can execute.
                 </p>
               </div>
             </div>
