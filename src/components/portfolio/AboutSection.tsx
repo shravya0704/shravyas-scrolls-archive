@@ -38,20 +38,17 @@ const AboutSection = () => {
           {/* Main intro card */}
           <AnimatedSection animation="fade-up" delay={100}>
             <div className="glass-card hover-card-sleek p-8 md:p-10">
-              <div className="font-garamond text-lg md:text-xl text-leather/90 leading-relaxed space-y-6">
-                <p className="text-xl md:text-2xl text-mahogany font-medium">
+              <div className="space-y-6">
+                <p className="font-garamond text-leather/90 text-base md:text-lg leading-relaxed">
                   I started in computer science — but I don’t stop at code.
                 </p>
-
-                <p>
+                <p className="font-garamond text-leather/90 text-base md:text-lg leading-relaxed">
                   I build products with a strong technical backbone and a clear business lens, focusing on user problems, market logic, and execution that actually ships.
                 </p>
-
-                <p>
+                <p className="font-garamond text-leather/90 text-base md:text-lg leading-relaxed">
                   My work spans AI, web development, product thinking, and strategy.
                 </p>
-
-                <p className="text-lg text-bronze/90 italic border-l-2 border-gold/30 pl-4">
+                <p className="font-garamond text-leather/90 text-base md:text-lg leading-relaxed">
                   In short: I’m a techie who understands business, and a product thinker who can execute.
                 </p>
               </div>
