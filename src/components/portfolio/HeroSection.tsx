@@ -39,7 +39,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="font-inter text-base md:text-lg text-leather/80 text-center mb-10 tracking-wide">
-              Tech & Business Enthusiast
+              Tech × Business · Product thinker who ships
             </p>
 
             <div className="flex justify-center">
