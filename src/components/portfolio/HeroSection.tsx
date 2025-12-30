@@ -8,7 +8,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="landing min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-library">
       {/* Elegant gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mahogany/10 to-burgundy/20" />
       
