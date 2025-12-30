@@ -146,11 +146,15 @@
   html {
     font-size: 17px;
     scroll-behavior: smooth;
+    color-scheme: light;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', 'EB Garamond', serif;
+    forced-color-adjust: none;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
