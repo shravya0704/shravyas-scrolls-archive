@@ -51,7 +51,7 @@ const AboutSection = () => {
                       My work spans AI, web development, product thinking, and strategy.
                     </p>
 
-                    <p className="italic text-leather/90 border-l-2 border-gold/30 pl-4">
+                    <p className="font-garamond text-leather/90 text-base md:text-lg leading-relaxed border-l-2 border-gold/30 pl-4">
                       In short: I’m a techie who understands business, and a product thinker who can execute.
                     </p>
               </div>

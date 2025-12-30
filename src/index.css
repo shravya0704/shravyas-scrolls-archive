@@ -6,6 +6,8 @@
 
 @layer base {
   :root {
+    /* Ensure consistent light appearance across devices */
+    color-scheme: light;
     /* Grand Library Color Palette - Refined */
     --background: 35 35% 94%;
     --foreground: 15 25% 15%;

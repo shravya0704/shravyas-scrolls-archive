@@ -64,7 +64,7 @@ const ContactSection = () => {
         backgroundSize: '32px 32px'
       }} />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <AnimatedSection animation="fade-up" className="text-center mb-16">
           <div className="flex justify-center mb-6">
