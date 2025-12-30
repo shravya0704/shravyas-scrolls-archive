@@ -100,7 +100,7 @@ const ExperienceSection = () => {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 ml-16">
+                <ul className="space-y-3 ml-6 sm:ml-10 md:ml-16">
                   {exp.details.map((detail, detailIndex) => (
                     <li key={detailIndex} className="flex items-start gap-3 font-garamond text-leather/90">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />

@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* Subtle radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 flex items-center justify-between max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12 max-w-7xl relative z-10">
         {/* Main content */}
         <div className="flex-1 max-w-2xl">
           <div className="glass-card p-10 md:p-14 animate-fade-in noise-texture">
@@ -56,13 +56,13 @@ const HeroSection = () => {
         </div>
 
         {/* Portrait */}
-        <div className="flex-1 max-w-md ml-16 hidden lg:block">
+        <div className="flex-1 max-w-md md:ml-10 lg:ml-16 hidden md:block">
           <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
             {/* Glow effect behind portrait */}
             <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-amber/10 to-crimson/20 rounded-full blur-2xl scale-110" />
             
             {/* Portrait container */}
-            <div className="relative w-80 h-80 mx-auto">
+            <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto">
               {/* Outer ring */}
               <div className="absolute inset-0 rounded-full border-2 border-gold/30 animate-[spin_30s_linear_infinite]" />
               <div className="absolute inset-3 rounded-full border border-amber/20 animate-[spin_25s_linear_infinite_reverse]" />
