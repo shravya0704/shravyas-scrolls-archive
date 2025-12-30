@@ -246,6 +246,50 @@
 }
 
 @layer utilities {
+  /* Intentional dark-mode styling scoped to landing/hero only */
+  @media (prefers-color-scheme: dark) {
+    .landing {
+      /* Neutral, professional palette for landing only */
+      --background: 220 15% 14%;
+      --foreground: 40 35% 92%;
+      --parchment: 40 35% 92%;
+
+      /* Neutralize brand accents */
+      --mahogany: 40 35% 92%; /* headings → crème */
+      --leather: 40 20% 80%; /* body text → soft crème */
+      --gold: 40 25% 82%; /* subtle accent → beige */
+      --crimson: 0 0% 40%;
+      --burgundy: 0 0% 20%;
+      --maroon: 0 0% 25%;
+      --amber: 40 25% 75%;
+      --bronze: 0 0% 50%;
+      --caramel: 0 0% 45%;
+
+      /* Calm background surfaces */
+      --gradient-library: linear-gradient(135deg, hsl(220 15% 18%) 0%, hsl(220 15% 12%) 100%);
+      --gradient-glass: linear-gradient(135deg, hsl(0 0% 18% / 0.9) 0%, hsl(0 0% 12% / 0.7) 100%);
+
+      /* Softer shadows */
+      --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3), 0 12px 40px -12px hsl(0 0% 0% / 0.35);
+      --shadow-deep: 0 20px 60px -20px hsl(0 0% 0% / 0.3);
+      --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.2), 0 8px 24px -8px hsl(0 0% 0% / 0.25);
+    }
+
+    .landing .section-divider::before {
+      background: linear-gradient(90deg, transparent, hsl(var(--parchment) / 0.3), transparent);
+    }
+
+    .landing .icon-container {
+      background: linear-gradient(135deg, hsl(0 0% 20% / 0.15) 0%, hsl(0 0% 18% / 0.2) 100%);
+      border-color: hsl(var(--parchment) / 0.25);
+    }
+
+    .landing .icon-container:hover {
+      background: linear-gradient(135deg, hsl(var(--parchment) / 0.12) 0%, hsl(0 0% 30% / 0.12) 100%);
+      border-color: hsl(var(--parchment) / 0.35);
+      box-shadow: 0 0 20px hsl(var(--parchment) / 0.2);
+    }
+  }
   /* Text shadow for headings */
   .text-shadow-elegant {
     text-shadow: 0 2px 10px hsl(var(--mahogany) / 0.2);
