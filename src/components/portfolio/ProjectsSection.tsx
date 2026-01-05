@@ -44,7 +44,9 @@ const ProjectsSection = () => {
       description: "Built a prototype web-based parking system to manage real-time slot availability and booking. Implemented backend logic using PHP, designed frontend in HTML/CSS/JS, created features to reduce wait time and booking conflicts, and mapped user journey for frictionless experience.",
       icon: <Car className="w-7 h-7" />,
       timeline: "College Project - Semester 3",
-      documents: []
+      documents: [
+        { label: "View GitHub", url: "https://github.com/AditiLad2005/BookMySpot" }
+      ]
     },
     {
       title: "Collabry",
