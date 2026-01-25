@@ -48,6 +48,7 @@ const ProjectsSection = () => {
         { label: "View GitHub", url: "https://github.com/AditiLad2005/BookMySpot" }
       ]
     },
+    
     {
       title: "Collabry",
       points: [
@@ -134,7 +135,23 @@ const ProjectsSection = () => {
       documents: [
         { label: "View PDF", url: "https://drive.google.com/file/d/1mdnOYv9FcdLiHpPBFelyKfQxlSGzboxy/view?usp=drive_link" }
       ]
-    }
+    },
+
+    {
+      title: "Culture Circle — Product Case Study",
+      points: [
+        "Conducted an end-to-end product audit of a luxury marketplace, identifying intent mismatches in search, navigation, and curations impacting high-intent users.",
+        "Segmented users by search-led vs discovery-led behavior and mapped how the same UX issues differently affected conversion, trust, and repeat usage.",
+        "Proposed 3 shippable fixes within a 30-day scope (intent-consistent results, honest curations, performance stability) to improve conversion and decision confidence.",
+      ],
+      icon: <Dumbbell className="w-7 h-7" />,
+      timeline: "Competition: Product Construct, IIT Madras",
+      documents: [
+        { label: "View PDF", url: "https://drive.google.com/file/d/1WSxTULSGbpvWRX8bQxWk8-s-JqrxXM5V/view?usp=drive_link" }
+      ]
+    },
+
+    
   ];
 
   return (
